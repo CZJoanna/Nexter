@@ -1,4 +1,32 @@
 .features {
   grid-column: center-start / center-end;
-  background-color: $color-grey-light-2;
+
+  //subgrid
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(25rem, 1fr)
+  ); //RWD without media query
+  grid-gap: 6rem;
+
+  align-items: start; //grid item 在 grid cell 中的對齊方式
+
+  margin: 12rem 0;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr; // already set the width of the icon whichs is gonna be put in
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    fill: $color-primary;
+    transform: translateY(-1rem); //move up to horizontal center with t
+  }
+  &__text {
+    grid-column: 2/3;
+    font-size: 1.7rem;
+  }
 }
