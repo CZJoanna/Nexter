@@ -1,5 +1,36 @@
 .sidebar {
   grid-row: 1 / -1;
   grid-column: sidebar-start / sidebar-end;
+
+  //置中nav-btn
+  display: flex;
+  justify-content: center;
+
+  //把nav-btn推下來
+  padding-top: 4.5rem;
   background-color: $color-primary;
+}
+
+.nav-btn {
+  height: 2px;
+  width: 4.5rem;
+  border: none;
+  background-color: #fff;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 4.5rem;
+    background-color: #fff;
+  }
+
+  &::before {
+    transform: translateY(-1.5rem);
+  }
+
+  &::after {
+    transform: translateY(1.3rem);
+  }
 }
