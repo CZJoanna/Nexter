@@ -1,5 +1,32 @@
 .realtors {
   grid-column: col-start 7 / full-end;
   background-color: $color-secondary;
-  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    grid-column-gap: 2rem;
+    grid-row-gap: 5vh;
+
+    //grid items in grid area
+    align-items: center;
+
+    //grid area in grid container
+    justify-content: center;
+  }
+  &__img {
+    display: block;
+    width: 7rem; //給圖片寬度（這邊用百分比不好）
+    border-radius: 50%;
+  }
+
+  &__sold {
+    color: $color-grey-light-2;
+    text-transform: uppercase;
+  }
 }
