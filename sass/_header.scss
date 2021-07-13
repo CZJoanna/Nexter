@@ -8,15 +8,26 @@
     ),
     url(../img/hero.jpeg);
   background-size: cover;
-  background-position: center ;
+  background-position: center;
 
   display: grid;
-  grid-template-rows: 1fr min-content min-content 1fr min-content;
-  grid-template-columns: max-content;
+  grid-template-rows: 1fr min-content minmax(6rem,min-content) 1fr;
+  grid-template-columns: minmax(
+    min-content,
+    max-content
+  ); //more flexible => use minmax func
   grid-row-gap: 3.5vh;
 
   justify-content: center;
 
+
+  @media only screen and (max-width: $bp-md) {
+    grid-column: full-start / full-end;
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    padding: 5rem;
+  }
 
   &__logo {
     justify-self: center;
@@ -39,7 +50,8 @@
     font-size: 1.6rem;
     color: $color-grey-light-2;
 
-    &::after,&::before {
+    &::after,
+    &::before {
       content: "";
       display: block;
       height: 1px;
@@ -50,13 +62,14 @@
   &__seenon-logos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2rem;
     align-items: center;
     justify-items: center;
 
-    grid-column-gap: 2rem;
-
+   
     img {
-      height: 2rem; 
+      max-height: 2rem; //use max-height instead
+      max-width: 100%;
       filter: brightness(70%);
     }
   }

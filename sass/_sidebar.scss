@@ -9,11 +9,23 @@
   //把nav-btn推下來
   padding-top: 4.5rem;
   background-color: $color-primary;
+
+  @media only screen and (max-width: $bp-lg) {
+    grid-row: 1 / span 1;
+    grid-column: 1 / -1;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-top: 0;
+    padding-right: 2rem;
+  }
 }
 
 .nav-btn {
   height: 2px;
   width: 4.5rem;
+
   border: none;
   background-color: #fff;
 
